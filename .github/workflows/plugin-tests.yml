@@ -60,15 +60,21 @@ jobs:
 
       - name: Check spec existence
         id: check_spec
-        uses: andstor/file-existence-action@v1
-        with:
-          files: "plugins/${{ github.event.repository.name }}/spec"
+        shell: bash
+        run: |
+          shopt -s extglob
+          if ls plugins/${{ github.event.repository.name }}/spec/**/*.@(rb) &> /dev/null; then
+            echo "::set-output name=files_exist::true"
+          fi
 
       - name: Check qunit existence
         id: check_qunit
-        uses: andstor/file-existence-action@v1
-        with:
-          files: "plugins/${{ github.event.repository.name }}/test/javascripts"
+        shell: bash
+        run: |
+          shopt -s extglob
+          if ls plugins/${{ github.event.repository.name }}/test/javascript/*.@(js|es6) &> /dev/null; then
+            echo "::set-output name=files_exist::true"
+          fi
 
       - name: Setup Git
         run: |
@@ -122,10 +128,10 @@ jobs:
           bin/rake db:migrate
 
       - name: Plugin RSpec
-        if: matrix.build_type == 'backend' && steps.check_spec.outputs.files_exists == 'true'
+        if: matrix.build_type == 'backend' && steps.check_spec.outputs.files_exist == 'true'
         run: bin/rake plugin:spec[${{ github.event.repository.name }}]
 
       - name: Plugin QUnit
-        if: matrix.build_type == 'frontend' && steps.check_qunit.outputs.files_exists == 'true'
+        if: matrix.build_type == 'frontend' && steps.check_qunit.outputs.files_exist == 'true'
         run: bundle exec rake plugin:qunit['${{ github.event.repository.name }}','1200000']
         timeout-minutes: 30
