@@ -10,5 +10,7 @@
 
 enabled_site_setting :plugin_name_enabled
 
+PLUGIN_NAME ||= -"discourse-plugin-name"
+
 after_initialize do
 end
