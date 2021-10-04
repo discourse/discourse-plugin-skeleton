@@ -1,5 +1,5 @@
-# < Plugin Name > Plugin
+# ** Plugin Name ** Plugin
 
-< Plugin Summary >
+** Plugin Summary **
 
-For more information, please see: < url to meta topic >
+For more information, please see: ** url to meta topic **
