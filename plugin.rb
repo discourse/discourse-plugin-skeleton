@@ -9,5 +9,4 @@
 
 enabled_site_setting :plugin_name_enabled
 
-after_initialize do
-end
+after_initialize {}
