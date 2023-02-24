@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 MyPluginModule::Engine.routes.draw do
-  get "/example-url" => "examples#index"
+  get "/examples" => "examples#index"
   # define routes here
 end
 
