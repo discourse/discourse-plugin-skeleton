@@ -2,6 +2,7 @@
 
 # name: discourse-plugin-name
 # about: TODO
+# meta_topic_id: TODO
 # version: 0.0.1
 # authors: Discourse
 # url: TODO
