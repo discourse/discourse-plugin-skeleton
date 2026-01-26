@@ -1,7 +1,6 @@
 {
   "extends": "discourse/tsconfig-plugin",
   "include": [
-    "package.json",
     "admin/assets/javascripts/**/*",
     "assets/javascripts/**/*",
     "test/javascripts/**/*",
