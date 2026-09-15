@@ -21,7 +21,8 @@
     "lint:prettier": "pnpm prettier 'assets/stylesheets/**/*.scss' '{assets,admin/assets,test}/javascripts/**/*.{js,gjs,ts,gts,mts,cts}' --check --no-error-on-unmatched-pattern",
     "lint:prettier:fix": "pnpm prettier 'assets/stylesheets/**/*.scss' '{assets,admin/assets,test}/javascripts/**/*.{js,gjs,ts,gts,mts,cts}' -w --no-error-on-unmatched-pattern",
     "lint:types": "ember-tsc -b",
-    "lttf:ignore": "lint-to-the-future ignore"
+    "lttf:ignore": "lint-to-the-future ignore",
+    "update-skeleton": "pnpx @discourse/update-skeleton@latest"
   },
   "engines": {
     "node": ">= 22",
