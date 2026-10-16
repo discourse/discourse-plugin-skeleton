@@ -30,7 +30,7 @@
     "node": ">= 22",
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm",
-    "pnpm": "^10"
+    "pnpm": "^12"
   },
-  "packageManager": "pnpm@10.28.0"
+  "packageManager": "pnpm@12.11.2"
 }
